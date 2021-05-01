@@ -1,24 +1,104 @@
 # hyrule_jobs
 
-## Project setup
+## Why use TypeScript 
+- Type errors are caught at compile time
+- Richer Editor Support (autocompletion)
+- Easier to read & understand the code
+- Better developer experience (debugging)
+---
+
+## TypeScript Vue Components
+### Option API
+Examples
+- Type argument: `changeName(name: string) {}`, `changeName(age: number | string) {}`
+- Type assertion: `age: 25 as number | string` 
+---
+
+## Composition API & TypeScript
+### Working with reactive
+Examples
+- Type reactive
 ```
-npm install
+import { toRefs, reactive } from 'vue
+setup() {
+const state = reactive({
+  name: 'Link',
+  age: 25 as string | number
+})
+return { ...toRefs(State) }
+}
 ```
 
-### Compiles and hot-reloads for development
+- Type ref
 ```
-npm run serve
+const age = ref<number | string>(25)
+
+age.value = 25, age.value = '25'
 ```
 
-### Compiles and minifies for production
+Create a Custom Job types
+- create a type folder under src
+- define Job type
 ```
-npm run build
+interface Job {
+  title: string,
+  location: string,
+  salary: number,
+  id: string
+}
+export default Job
 ```
 
-### Lints and fixes files
+Use Job Type inside component
+- import Job type
+- apply Job inside ref
 ```
-npm run lint
+const jobs = ref<Job[]>([
+  { title: '', location: '', salary: xxx, id: xx },
+  { title: '', location: '', salary: xxx, id: xx },
+  { title: '', location: '', salary: xxx, id: xx }
+])
+```
+---
+
+## Types & Props
+### Type props
+Examples
+- `import { PropType } from 'vue'`
+```
+props: {
+  jobs: {
+    required: true,
+    type: Array as PropType<Job[]>
+  }
+}
+```
+---
+
+## Functions
+### Type functions
+create a new type for function argument
+
+Example
+- create a OrderTerm.ts under types folder
+```
+type OrderTerm = 'location' | 'title' | 'salary'
+
+export default OrderTerm
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+import OrderTerm and apply it inside function argument
+```
+const handleClick = (term: OrderTerm) => {}
+```
+
+
+
+
+
+
+
+
+
+
+
