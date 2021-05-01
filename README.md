@@ -108,7 +108,7 @@ return { orderedJobs }
 ---
 
 ## Hylia Font & Final Styles
-- download Hylia Font zip file, uncompress it and copy `.otf` file inide assets folder
+- download Hylia Font zip file, uncompress it and copy `.otf` file inside assets folder
 - register Hylia Font in `global.css`
 ```
 @font-face {
@@ -116,6 +116,21 @@ return { orderedJobs }
   src: url("HyliaSerifBeta-Regular.otf") format("opentype");
 }
 ```
+- wrap `<li>` with `＜transtion-group>`, notice `.move` is the built-in vue animation propery
+```
+<transition-group name="list" tag="li">
+...
+</transition-group>
+
+<style scope>
+.list-move {
+  transition: all 1s;
+}
+</style>
+
+```
+
+
 
 
 
