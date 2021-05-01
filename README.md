@@ -92,6 +92,30 @@ import OrderTerm and apply it inside function argument
 const handleClick = (term: OrderTerm) => {}
 ```
 
+## Computed Values
+Example - orderedJobs
+- create a orderedJobs computed
+```
+setup(props) {
+const orderedJobs = computed(() => {
+  return [props.jobs].sort((a: Job, b: Job) => {
+    return a[props.order] > b[props.order] > 1 : -1
+  })
+})
+return { orderedJobs }
+}
+```
+---
+
+## Hylia Font & Final Styles
+- download Hylia Font zip file, uncompress it and copy `.otf` file inide assets folder
+- register Hylia Font in `global.css`
+```
+@font-face {
+  font-family: HyliaSerif;
+  src: url("HyliaSerifBeta-Regular.otf") format("opentype");
+}
+```
 
 
 
