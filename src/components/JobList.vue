@@ -79,6 +79,6 @@ export default defineComponent({
   margin: 10px 4px;
 }
 .list-move {
-  transition: all 1s;
+  transition: all .5s;
 }
 </style>
