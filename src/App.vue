@@ -97,4 +97,18 @@ header img {
 header h1 {
   font-size: 3em;
 }
+.order {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .order {
+    flex-direction: column;    
+    align-items: center;
+  }
+  .order button {
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+}
 </style>
