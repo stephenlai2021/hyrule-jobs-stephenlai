@@ -4,9 +4,16 @@
   --btn-primary: #1195c9;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans";
   background: #ece6d9;
+  padding: 2rem 1rem 0 1rem;
 }
 
 @font-face {

@@ -101,6 +101,13 @@ header h1 {
   display: flex;
   justify-content: center;
 }
+.title {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.title img {
+  display: inline-block;
+}
 @media (max-width: 480px) {
   .order {
     flex-direction: column;    
@@ -109,6 +116,13 @@ header h1 {
   .order button {
     margin-bottom: 1rem;
     width: 80%;
+  }
+  .title h1 {
+    font-size: 35px;
+  }
+  .title img {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
